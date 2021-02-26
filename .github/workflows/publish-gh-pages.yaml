@@ -2,7 +2,7 @@ name: Publish to GitHub Pages
 
 on:
   push:
-    branch:
+    branches:
       main
 
 jobs:
@@ -16,7 +16,7 @@ jobs:
       - run: npm ci --no-production
       - run: npm run build
 
-      - name: Upload bundles
+      - name: Upload public
         uses: actions/upload-artifact@v2
         with:
           name: public
